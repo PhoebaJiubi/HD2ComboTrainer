@@ -1,0 +1,15 @@
+build-*/
+debug/
+release/
+*.o
+*.obj
+*.exe
+*.dll
+*.a
+*.lib
+*.user
+*.user.*
+Makefile*
+.qmake.stash
+.DS_Store
+Thumbs.db

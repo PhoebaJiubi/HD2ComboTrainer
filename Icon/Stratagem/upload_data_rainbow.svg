@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name=" 图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="b" data-name="未命名的渐变" x1="78.1" y1="439.49" x2="460.99" y2="660.57" gradientTransform="translate(0 -278)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e0e010"/>
+      <stop offset=".5" stop-color="#10e0e0"/>
+      <stop offset="1" stop-color="#e010e0"/>
+    </linearGradient>
+  </defs>
+  <path d="M16.25,495.75v-81.27l81.27,81.27H16.25ZM495.75,495.75v-81.27l-81.27,81.27h81.27ZM495.75,16.25v81.27l-81.27-81.27h81.27ZM16.25,16.25v81.27L97.52,16.25H16.25Z" style="fill: #fff;"/>
+  <path d="M36.57,316.95v40.63l40.63,40.63h357.59l40.63-40.63v-40.63h-178.79v56.89h-81.27v-56.89H36.57ZM105.65,300.7V113.78h300.7v186.92H105.65ZM256,138.16l-89.4,93.46h48.76v56.89h81.27v-56.89h48.76l-89.4-93.46h0Z" style="fill: url(#b);"/>
+</svg>

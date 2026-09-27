@@ -1,0 +1,2436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1097</width>
+    <height>795</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ===== 全局背景 ===== */
+QMainWindow, QWidget {
+    background-color: #0f0f1a;
+    color: #c0c0d0;
+    font-family: &quot;Microsoft YaHei&quot;;
+}
+
+/* ===== 所有标签 ===== */
+QLabel {
+    color: #c0c0d0;
+}
+
+/* ===== 所有按钮 ===== */
+QPushButton {
+    background-color: #1a1a2e;
+    color: #c0c0d0;
+    border: 2px solid #2a2a4a;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #2a2a4e;
+    border-color: #4a4a7a;
+}
+QPushButton:pressed {
+    background-color: #3a3a5e;
+    border-color: #ffcc00;
+}
+
+/* ===== 滚动条 ===== */
+QScrollBar:vertical {
+    background-color: #0f0f1a;
+    width: 12px;
+    border-radius: 6px;
+}
+QScrollBar::handle:vertical {
+    background-color: #2a2a4a;
+    border-radius: 6px;
+    min-height: 30px;
+}
+QScrollBar::handle:vertical:hover {
+    background-color: #3a3a6a;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* ===== 分组框（卡片容器） ===== */
+QGroupBox {
+    background-color: #1a1a2e;
+    border: 2px solid #2a2a4a;
+    border-radius: 10px;
+    margin-top: 12px;
+    padding-top: 8px;
+}
+QGroupBox::title {
+    color: #ffcc00;
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 8px;
+}
+
+/* ===== 进度条 ===== */
+QProgressBar {
+    background-color: #0f0f1a;
+    border: 1px solid #2a2a4a;
+    border-radius: 4px;
+    height: 6px;
+    text-align: center;
+}
+QProgressBar::chunk {
+    background-color: #ff8800;
+    border-radius: 4px;
+}
+
+/* ===== 输入框 ===== */
+QLineEdit, QTextEdit {
+    background-color: #0f0f1a;
+    border: 2px solid #2a2a4a;
+    border-radius: 6px;
+    color: #c0c0d0;
+    padding: 6px 10px;
+}
+QLineEdit:focus, QTextEdit:focus {
+    border-color: #ffcc00;
+}
+
+/* ===== 下拉框 ===== */
+QComboBox {
+    background-color: #1a1a2e;
+    border: 2px solid #2a2a4a;
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: #c0c0d0;
+}
+QComboBox:hover {
+    border-color: #4a4a7a;
+}
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #c0c0d0;
+    margin-right: 6px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QListWidget" name="listWidget">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>170</width>
+               <height>500</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Microsoft YaHei</family>
+               <pointsize>-1</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="statusTip">
+              <string/>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QListWidget {
+    background-color: #1a1a2e;      /* 深空蓝背景 */
+    border: none;
+    outline: none;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 每个条目的间距和下划线 */
+QListWidget::item {
+    padding: 16px 20px;
+    border-bottom: 2px solid #2a2a4a;
+    color: #a0a0b8;
+}
+
+/* 鼠标悬浮效果 */
+QListWidget::item:hover {
+    background-color: #2a2a4e;
+    color: #ffffff;
+}
+
+/* 选中效果（关键！看起来像发光菜单） */
+QListWidget::item:selected {
+    background-color: #2a2a4e;
+    color: #ffcc00;                /* 亮黄色文字 */
+    border-left: 6px solid #ffcc00; /* 左侧亮条 */
+    padding-left: 14px;            /* 选中时稍微偏移，模拟凹陷 */
+}
+
+/* 去掉选中时的虚线焦点框 */
+QListWidget::item:selected:active,
+QListWidget::item:selected:!active {
+    background-color: #2a2a4e;
+}</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>练习模式</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>计时随机模式</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>无限模式</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>默写模式</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>光能族干扰模式</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QStackedWidget" name="stackedWidget">
+           <property name="styleSheet">
+            <string notr="true">QWidget {
+    background-color: #1a1a2e;
+    border-radius: 10px;
+}</string>
+           </property>
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <widget class="QWidget" name="page_1">
+            <layout class="QGridLayout" name="gridLayout_15">
+             <item row="0" column="0">
+              <widget class="QLineEdit" name="searchEdit">
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>搜索战备...</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1" rowspan="2">
+              <layout class="QGridLayout" name="gridLayout_14">
+               <item row="2" column="0">
+                <widget class="QLabel" name="statusLabel">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel#statusLabel {
+    color: #ffd966;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 20px;
+    font-weight: bold;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="arrowsContainer">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>150</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="nameLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="iconLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel#iconLabel {
+    qproperty-alignment: AlignCenter;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lastTimeLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel#lastTimeLabel {
+    color: #ffd966;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 20px;
+    font-weight: bold;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>上次用时：--</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QListWidget" name="listWidget_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/* ===== 左侧列表整体 ===== */
+QListWidget {
+    background-color: #1a1a2e;
+    border: none;
+    outline: none;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 每个条目的间距和下划线 */
+QListWidget::item {
+    padding: 16px 20px;
+    border-bottom: 2px solid #2a2a4a;
+    color: #a0a0b8;
+}
+
+/* 鼠标悬浮效果 */
+QListWidget::item:hover {
+    background-color: #2a2a4e;
+    color: #ffffff;
+}
+
+/* 选中效果 */
+QListWidget::item:selected {
+    background-color: #2a2a4e;
+    color: #ffcc00;
+    border-left: 6px solid #ffcc00;
+    padding-left: 14px;
+}
+
+/* 去掉选中时的虚线焦点框 */
+QListWidget::item:selected:active,
+QListWidget::item:selected:!active {
+    background-color: #2a2a4e;
+}
+
+/* ===== 滚动条整体轨道 ===== */
+QListWidget QScrollBar:vertical {
+    background-color: #1a1a2e;
+    width: 10px;
+    border-radius: 5px;
+    margin: 2px 2px 2px 0px;
+}
+
+/* ===== 滚动条滑块 ===== */
+QListWidget QScrollBar::handle:vertical {
+    background-color: #3a3a5a;
+    border-radius: 5px;
+    min-height: 50px;
+}
+
+/* ===== 滑块悬停 ===== */
+QListWidget QScrollBar::handle:vertical:hover {
+    background-color: #5a5a8a;
+}
+
+/* ===== 滑块按下 ===== */
+QListWidget QScrollBar::handle:vertical:pressed {
+    background-color: #ffcc00;
+}
+
+/* ===== 去掉上下箭头 ===== */
+QListWidget QScrollBar::add-line:vertical,
+QListWidget QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+/* ===== 背景去除干扰 ===== */
+QListWidget QScrollBar::add-page:vertical,
+QListWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_2">
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QStackedWidget" name="TimeAttack_pages">
+               <widget class="QWidget" name="TimeAttack_page_SetUp">
+                <property name="styleSheet">
+                 <string notr="true">QWidget#TimeAttack_page_SetUp {
+    background-color: #1a1a2e;
+}</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <item>
+                  <widget class="QLabel" name="TimeAttack_titleLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#TimeAttack_titleLabel {
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffd966;
+    qproperty-alignment: AlignCenter;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>计时随机模式</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QLabel" name="TimeAttack_countHintLabel">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>200</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel#TimeAttack_countHintLabel {
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffd966;
+    qproperty-alignment: AlignCenter;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>选择战备数</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="TimeAttack_countSpinBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>108</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QSpinBox#TimeAttack_countSpinBox {
+    background-color: #2a2a4e;
+    color: #ffffff;
+    border: 2px solid #3a3a5a;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;
+    min-width: 80px;
+}
+
+/* 取消聚焦时的金色高亮 */
+QSpinBox#spinBox:focus {
+    border-color: #3a3a5a;
+}
+
+/* 上下按钮背景 */
+QSpinBox#spinBox::up-button,
+QSpinBox#spinBox::down-button {
+    background-color: #2a2a4e;
+    border: none;
+    width: 22px;
+}
+
+QSpinBox#spinBox::up-button:hover,
+QSpinBox#spinBox::down-button:hover {
+    background-color: #3a3a5e;
+}
+
+/* 金色向上箭头 */
+QSpinBox#spinBox::up-arrow {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 6px solid #ffd966;
+}
+
+/* 金色向下箭头 */
+QSpinBox#spinBox::down-arrow {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #ffd966;
+}</string>
+                     </property>
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>100</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <item>
+                    <spacer name="horizontalSpacer">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="TimeAttack_startButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>324</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton#TimeAttack_startButton {
+    background-color: #2a2a4e;
+    color: #ffd966;
+    border: 2px solid #ffd966;
+    border-radius: 8px;
+    padding: 12px 60px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 200px;
+}
+
+QPushButton#TimeAttack_startButton:hover {
+    background-color: #3a3a5e;
+    color: #ffe58a;
+    border-color: #ffe58a;
+}
+
+QPushButton#TimeAttack_startButton:pressed {
+    background-color: #ffd966;
+    color: #1a1a2e;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>开始游戏</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="TimeAttack_page_Play">
+                <property name="styleSheet">
+                 <string notr="true">/* ========== Play 页背景 ========== */
+QWidget#TimeAttack_page_Play {
+    background-color: #1a1a2e;
+}
+
+/* ========== 大图标 ========== */
+QLabel#TimeAttack_iconLabel {
+    background: transparent;
+    border: none;
+}
+
+/* ========== 战备名称 ========== */
+QLabel#TimeAttack_nameLabel {
+    color: #ffb000;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 28px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}
+
+/* ========== 状态提示 ========== */
+QLabel#TimeAttack_stateLabel {
+    color: #a0a0b8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}
+
+/* ========== 箭头容器 ========== */
+QWidget#TimeAttack_arrowsContainer {
+    background: transparent;
+    border: none;
+}</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="QProgressBar" name="progressBar">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QProgressBar {
+    background-color: #0f1420;
+    border: 1px solid #5a6a7a;
+    border-radius: 0px;
+    height: 22px;
+    text-align: center;
+    color: #ffffff;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+QProgressBar::chunk {
+    background-color: #ffb000;   /* ← 琥珀金 */
+    border-radius: 0px;
+    margin: 1px;
+}</string>
+                   </property>
+                   <property name="value">
+                    <number>24</number>
+                   </property>
+                   <property name="textVisible">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="TimeAttack_nameLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="TimeAttack_stateLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="TimeAttack_iconLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>250</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#TimeAttack_iconLabel {
+    qproperty-alignment: AlignCenter;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="TimeAttack_arrowsContainer" native="true"/>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="TimeAttack_page_Result">
+                <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <item>
+                  <widget class="QLabel" name="TimeAttack_resultTitleLabel">
+                   <property name="font">
+                    <font>
+                     <family>Microsoft YaHei</family>
+                     <pointsize>-1</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                     <underline>false</underline>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+										  QLabel {
+										  color: #ffb000;
+										  font-family: &quot;Microsoft YaHei&quot;;
+										  font-size: 42px;
+										  font-weight: bold;
+										  letter-spacing: 6px;
+										  }
+									  </string>
+                   </property>
+                   <property name="text">
+                    <string>MISSION COMPLETE</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="TimeAttack_titleDivider">
+                   <property name="minimumSize">
+                    <size>
+                     <width>2</width>
+                     <height>2</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+										  QFrame {
+										  background-color: #ffb000;
+										  border: none;
+										  }
+									  </string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::HLine</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Plain</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="TimeAttack_statsContainer" native="true">
+                   <layout class="QHBoxLayout" name="horizontalLayout_5">
+                    <item>
+                     <widget class="QFrame" name="TimeAttack_totalCard">
+                      <property name="styleSheet">
+                       <string notr="true">
+													  QFrame {
+													  background-color: #0f1420;
+													  border: 1px solid #3a3a5a;
+													  padding: 16px 24px;
+													  }
+												  </string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_6">
+                       <item>
+                        <widget class="QLabel" name="TimeAttack_totalTitleLabel">
+                         <property name="styleSheet">
+                          <string notr="true">
+																  QLabel {
+																  color: #ffb000;
+																  font-family: &quot;Microsoft YaHei&quot;;
+																  font-size: 32px;
+																  font-weight: bold;
+																  background: transparent;
+																  border: none;
+																  }
+															  </string>
+                         </property>
+                         <property name="text">
+                          <string>总耗时</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="TimeAttack_totalValueLabel">
+                         <property name="styleSheet">
+                          <string notr="true">QFrame#TimeAttack_totalCard {
+    background-color: #0f1420;
+    border: 1px solid #3a3a5a;
+    border-radius: 0px;
+    padding: 16px 24px;
+    min-width: 180px;
+}
+
+QLabel#TimeAttack_totalValueLabel {
+    color: #8fb0c8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#TimeAttack_totalTitleLabel {
+    color: #5a7a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>0.0s</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="TimeAttack_avgCard">
+                      <property name="styleSheet">
+                       <string notr="true">QFrame#TimeAttack_avgCard {
+    background-color: #0f1420;
+    border: 1px solid #3a3a5a;
+    border-radius: 0px;
+    padding: 16px 24px;
+    min-width: 180px;
+}</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_7">
+                       <item>
+                        <widget class="QLabel" name="TimeAttack_avgTitleLabel">
+                         <property name="styleSheet">
+                          <string notr="true">
+																  QLabel {
+																  color: #ffb000;
+																  font-family: &quot;Microsoft YaHei&quot;;
+																  font-size: 22px;
+																  font-weight: bold;
+																  background: transparent;
+																  border: none;
+																  }
+															  </string>
+                         </property>
+                         <property name="text">
+                          <string>平均耗时</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="TimeAttack_avgValueLabel">
+                         <property name="styleSheet">
+                          <string notr="true">QFrame#TimeAttack_avgCard {
+    background-color: #0f1420;
+    border: 1px solid #3a3a5a;
+    border-radius: 0px;
+    padding: 16px 24px;
+    min-width: 180px;
+}
+
+QLabel#TimeAttack_avgValueLabel {
+    color: #8fb0c8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#TimeAttack_avgTitleLabel {
+    color: #5a7a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>0.0s</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QFrame" name="TimeAttack_errorCard">
+                      <property name="styleSheet">
+                       <string notr="true">
+													  QFrame {
+													  background-color: #0f1420;
+													  border: 1px solid #3a3a5a;
+													  padding: 16px 24px;
+													  }
+												  </string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_8">
+                       <item>
+                        <widget class="QLabel" name="TimeAttack_errorTitleLabel">
+                         <property name="styleSheet">
+                          <string notr="true">
+																  QLabel {
+																  color: #ffb000;
+																  font-family: &quot;Microsoft YaHei&quot;;
+																  font-size: 22px;
+																  font-weight: bold;
+																  background: transparent;
+																  border: none;
+																  }
+															  </string>
+                         </property>
+                         <property name="text">
+                          <string>错误次数</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="TimeAttack_errorValueLabel">
+                         <property name="styleSheet">
+                          <string notr="true">QFrame#TimeAttack_errorCard {
+    background-color: #0f1420;
+    border: 1px solid #3a3a5a;
+    border-radius: 0px;
+    padding: 16px 24px;
+    min-width: 180px;
+}
+
+QLabel#TimeAttack_errorValueLabel {
+    color: #8fb0c8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#TimeAttack_errorTitleLabel {
+    color: #5a7a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                         </property>
+                         <property name="text">
+                          <string>0</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QListWidget" name="TimeAttack_detailList">
+                   <property name="styleSheet">
+                    <string notr="true">QListWidget#TimeAttack_detailList QScrollBar:vertical {
+    background: #1e1e2e;
+    width: 10px;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::handle:vertical {
+    background: #ffcc00;
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::handle:vertical:hover {
+    background: #ffe066;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::handle:vertical:pressed {
+    background: #e6b800;
+}
+
+/* 上下箭头去掉 */
+QListWidget#TimeAttack_detailList QScrollBar::add-line:vertical,
+QListWidget#TimeAttack_detailList QScrollBar::sub-line:vertical {
+    height: 0px;
+    background: none;
+    border: none;
+}
+
+/* 去掉上下按钮区域 */
+QListWidget#TimeAttack_detailList QScrollBar::add-page:vertical,
+QListWidget#TimeAttack_detailList QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* ---------- 横向滚动条（如果也用到） ---------- */
+QListWidget#TimeAttack_detailList QScrollBar:horizontal {
+    background: #1e1e2e;
+    height: 10px;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::handle:horizontal {
+    background: #ffcc00;
+    min-width: 30px;
+    border-radius: 5px;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::handle:horizontal:hover {
+    background: #ffe066;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::add-line:horizontal,
+QListWidget#TimeAttack_detailList QScrollBar::sub-line:horizontal {
+    width: 0px;
+    background: none;
+    border: none;
+}
+
+QListWidget#TimeAttack_detailList QScrollBar::add-page:horizontal,
+QListWidget#TimeAttack_detailList QScrollBar::sub-page:horizontal {
+    background: none;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="TimeAttack_buttonContainer" native="true">
+                   <layout class="QHBoxLayout" name="horizontalLayout_6">
+                    <item>
+                     <widget class="QPushButton" name="TimeAttack_retryButton">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#TimeAttack_retryButton {
+    background-color: transparent;
+    color: #ffb000;
+    border: 2px solid #ffb000;
+    padding: 12px 48px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+QPushButton#TimeAttack_retryButton:hover {
+    background-color: #ffb000;
+    color: #ffffff;
+}
+
+QPushButton#TimeAttack_retryButton:pressed {
+    background-color: #e6a000;
+    color: #ffffff;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>再来一局</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="TimeAttack_backButton">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton#TimeAttack_backButton {
+    background-color: transparent;
+    color: #ffb000;
+    border: 2px solid #ffb000;
+    padding: 12px 48px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+QPushButton#TimeAttack_backButton:hover {
+    background-color: #ffb000;
+    color: #ffffff;
+}
+
+QPushButton#TimeAttack_backButton:pressed {
+    background-color: #e6a000;
+    color: #ffffff;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>返回设置</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_3">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="0">
+              <widget class="QStackedWidget" name="Infinite_pages">
+               <widget class="QWidget" name="Infinite_page_Play">
+                <property name="styleSheet">
+                 <string notr="true">QWidget#Infinite_page_Play {
+    background-color: #1a1a2e;
+}</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="Infinite_comboLabel">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Infinite_comboLabel {
+    color: #ffb000;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    padding: 16px 0;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="Infinite_viewport" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">QWidget#Infinite_viewport {
+    background-color: #1a1a2e;
+    border-top: 1px solid #3a3a5a;
+    border-bottom: 1px solid #3a3a5a;
+    border-left: none;
+    border-right: none;
+}
+QWidget#Infinite_viewport {
+    background-color: #1a1a2e;
+    border: none;
+}</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_6">
+                    <item row="0" column="0">
+                     <widget class="QScrollArea" name="Infinite_scrollArea">
+                      <property name="styleSheet">
+                       <string notr="true">QScrollArea#Infinite_scrollArea {
+    background-color: #1a1a2e;
+    border: none;
+}
+
+QScrollArea#Infinite_scrollArea &gt; QWidget &gt; QWidget {
+    background-color: #1a1a2e;
+}
+
+QScrollBar:horizontal,
+QScrollBar:vertical {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border: none;
+}</string>
+                      </property>
+                      <property name="widgetResizable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                       <property name="geometry">
+                        <rect>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>802</width>
+                         <height>320</height>
+                        </rect>
+                       </property>
+                      </widget>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="Infinite_hintLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Infinite_hintLabel {
+    color: #7a8a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    padding: 16px 0;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="Infinite_page_Result">
+                <property name="styleSheet">
+                 <string notr="true">QWidget#Infinite_page_Result {
+    background-color: #1a1a2e;
+}</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="4" column="1">
+                  <widget class="QLabel" name="Infinite_comboTitleLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Infinite_comboTitleLabel {
+    color: #5a7a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>正确通过</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="2">
+                  <widget class="QFrame" name="frame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>19</width>
+                     <height>3</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>3</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+										  QFrame {
+										  background-color: #ffb000;
+										  border: none;
+										  }
+									  </string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0" colspan="2">
+                  <widget class="QLabel" name="Infinite_comboValueLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Infinite_comboValueLabel {
+    color: #8fb0c8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 50px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_7">
+                   <item>
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="Infinite_resultBackButton">
+                     <property name="minimumSize">
+                      <size>
+                       <width>400</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>400</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton#Infinite_resultBackButton {
+    background-color: transparent;
+    color: #ffb000;
+    border: 2px solid #ffb000;
+    padding: 12px 48px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+QPushButton#Infinite_resultBackButton:hover {
+    background-color: #ffb000;
+    color: #ffffff;
+}
+
+QPushButton#Infinite_resultBackButton:pressed {
+    background-color: #e6a000;
+    color: #ffffff;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>返回</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_4">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="0" column="0" colspan="2">
+                  <widget class="QLabel" name="Infinite_resultTitleLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Infinite_resultTitleLabel {
+    color: #ffb000;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    background: transparent;
+    border: none;
+    padding: 20px 0;
+    qproperty-alignment: AlignCenter;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>已回归平民生活</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <spacer name="verticalSpacer_6">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="7" column="1">
+                  <spacer name="verticalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="9" column="1">
+                  <spacer name="verticalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_4">
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <widget class="QStackedWidget" name="Dictation_pages">
+               <widget class="QWidget" name="Dictation_page_Play">
+                <layout class="QGridLayout" name="gridLayout_8">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="Dictation_iconLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>400</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Dictation_iconLabel {
+    background: transparent;
+    border: none;
+}
+QLabel#Dictation_iconLabel {
+    qproperty-alignment: AlignCenter;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="Dictation_nameLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Dictation_nameLabel {
+    color: #ffb000;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 28px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QProgressBar" name="Dictation_timerBar">
+                   <property name="styleSheet">
+                    <string notr="true">QProgressBar#Dictation_timerBar {
+    background-color: #0f1420;
+    border: none;
+    border-radius: 0px;
+}
+
+QProgressBar#Dictation_timerBar::chunk {
+    background-color: #ffb000;
+    border-radius: 0px;
+}</string>
+                   </property>
+                   <property name="value">
+                    <number>24</number>
+                   </property>
+                   <property name="textVisible">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QWidget" name="Dictation_arrowsContainer" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">QWidget#Dictation_arrowsContainer {
+    background: transparent;
+    border: none;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="Dictation_page_Result">
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <item row="0" column="0" colspan="2">
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <item>
+                    <widget class="QLabel" name="Dictation_resultTitleLabel">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>60</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>60</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>0</width>
+                       <height>60</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel#Dictation_resultTitleLabel {
+    color: #ffb000;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 42px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>MISSION COMPLETE</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="1" column="0" colspan="2">
+                  <widget class="QFrame" name="frame_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>3</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+										  QFrame {
+										  background-color: #ffb000;
+										  border: none;
+										  }
+									  </string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <spacer name="verticalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="3" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <item>
+                    <spacer name="horizontalSpacer_5">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="Dictation_correctCard">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>278</width>
+                       <height>230</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>450</width>
+                       <height>230</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QFrame#Dictation_correctCard {
+    background-color: #0f1420;
+    border: 1px solid #3a3a5a;
+    padding: 24px 48px;
+    min-width: 180px;
+}</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_10">
+                      <item>
+                       <widget class="QLabel" name="Dictation_correctTitleLabel">
+                        <property name="styleSheet">
+                         <string notr="true">QLabel#Dictation_correctTitleLabel {
+    color: #5a7a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>答对</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="Dictation_correctValueLabel">
+                        <property name="styleSheet">
+                         <string notr="true">QLabel#Dictation_correctValueLabel {
+    color: #8fb0c8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_6">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="4" column="0">
+                  <spacer name="verticalSpacer_9">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="5" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <item>
+                    <spacer name="horizontalSpacer_7">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="Dictation_resultBackButton">
+                     <property name="minimumSize">
+                      <size>
+                       <width>400</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton#Dictation_resultBackButton {
+    background-color: transparent;
+    color: #ffb000;
+    border: 2px solid #ffb000;
+    padding: 12px 48px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+QPushButton#Dictation_resultBackButton:hover {
+    background-color: #ffb000;
+    color: #ffffff;
+}
+
+QPushButton#Dictation_resultBackButton:pressed {
+    background-color: #e6a000;
+    color: #ffffff;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>返回</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_8">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_5">
+            <layout class="QGridLayout" name="gridLayout_10">
+             <item row="0" column="0">
+              <widget class="QStackedWidget" name="Illuminate_page">
+               <widget class="QWidget" name="Illuminate_page_Play">
+                <layout class="QGridLayout" name="gridLayout_11">
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="Illuminate_arrowsContainer" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">QWidget#Illuminate_arrowsContainer {
+    background: transparent;
+    border: none;
+}</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="Illuminate_hintLabel">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel#Illuminate_hintLabel {
+    color: #7a8a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="Illuminate_page_Result">
+                <layout class="QGridLayout" name="gridLayout_13">
+                 <item row="1" column="0">
+                  <widget class="QFrame" name="frame_3">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>3</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+										  QFrame {
+										  background-color: #ffb000;
+										  border: none;
+										  }
+									  </string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_12">
+                   <item>
+                    <spacer name="horizontalSpacer_11">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="Illuminate_correctCard">
+                     <property name="minimumSize">
+                      <size>
+                       <width>300</width>
+                       <height>300</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>300</width>
+                       <height>300</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_12">
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="Illuminate_correctValueLabel">
+                        <property name="styleSheet">
+                         <string notr="true">QLabel#Illuminate_correctValueLabel {
+    color: #8fb0c8;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>用时</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="Illuminate_correctTitleLabel">
+                        <property name="styleSheet">
+                         <string notr="true">QLabel#Illuminate_correctTitleLabel {
+    color: #5a7a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 32px;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>用时</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="Illuminate_feedbackLabel">
+                        <property name="styleSheet">
+                         <string notr="true">QLabel#Illuminate_feedbackLabel {
+    color: #7a8a9a;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 40px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>t</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_12">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="0" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_11">
+                   <item>
+                    <spacer name="horizontalSpacer_9">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="Illuminate_resultTitleLabel">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>60</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>60</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel#Illuminate_resultTitleLabel {
+    color: #ffb000;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 42px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    qproperty-alignment: AlignCenter;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>MISSION COMPLETE</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_10">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="2" column="0">
+                  <spacer name="verticalSpacer_8">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>132</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="5" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <item>
+                    <spacer name="horizontalSpacer_13">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="Illuminate_resultBackButton">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>300</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton#Illuminate_resultBackButton {
+    background-color: transparent;
+    color: #ffb000;
+    border: 2px solid #ffb000;
+    padding: 12px 48px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+QPushButton#Illuminate_resultBackButton:hover {
+    background-color: #ffb000;
+    color: #ffffff;
+}
+
+QPushButton#Illuminate_resultBackButton:pressed {
+    background-color: #e6a000;
+    color: #ffffff;
+}
+QPushButton {
+    outline: none;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>返回</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_14">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="4" column="0">
+                  <spacer name="verticalSpacer_10">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1097</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

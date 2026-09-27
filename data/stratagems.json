@@ -1,0 +1,842 @@
+[
+  {
+    "id": "airburst_rocket_launcher",
+    "name": "空爆火箭发射器",
+    "type": "supply",
+    "icon_small": ":/Stratagem/airburst_rocket_launcher.svg",
+    "icon_large": ":/Stratagem/airburst_rocket_launcher.svg",
+    "code": ["S", "W", "W", "A", "D"]
+  },
+  {
+    "id": "anti_materiel_rifle",
+    "name": "反器材步枪",
+    "type": "supply",
+    "icon_small": ":/Stratagem/anti_materiel_rifle.svg",
+    "icon_large": ":/Stratagem/anti_materiel_rifle.svg",
+    "code": ["S", "A", "D", "W", "S"]
+  },
+  {
+    "id": "anti_personnel_minefield",
+    "name": "反步兵地雷",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/anti_personnel_minefield.svg",
+    "icon_large": ":/Stratagem/anti_personnel_minefield.svg",
+    "code": ["S", "A", "W", "D"]
+  },
+  {
+    "id": "anti_tank_emplacement",
+    "name": "反坦克炮台",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/anti_tank_emplacement.svg",
+    "icon_large": ":/Stratagem/anti_tank_emplacement.svg",
+    "code": ["S", "W", "A", "D", "D", "D"]
+  },
+  {
+    "id": "anti_tank_mines",
+    "name": "反坦克地雷",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/anti_tank_mines.svg",
+    "icon_large": ":/Stratagem/anti_tank_mines.svg",
+    "code": ["S", "A", "W", "W"]
+  },
+  {
+    "id": "arc_thrower",
+    "name": "电弧发射器",
+    "type": "supply",
+    "icon_small": ":/Stratagem/arc_thrower.svg",
+    "icon_large": ":/Stratagem/arc_thrower.svg",
+    "code": ["S", "D", "S", "W", "A", "A"]
+  },
+  {
+    "id": "autocannon",
+    "name": "机炮",
+    "type": "supply",
+    "icon_small": ":/Stratagem/autocannon.svg",
+    "icon_large": ":/Stratagem/autocannon.svg",
+    "code": ["S", "A", "S", "W", "W", "D"]
+  },
+  {
+    "id": "autocannon_sentry",
+    "name": "机炮哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/autocannon_sentry.svg",
+    "icon_large": ":/Stratagem/autocannon_sentry.svg",
+    "code": ["S", "W", "D", "W", "A", "W"]
+  },
+  {
+    "id": "ballistic_shield_backpack",
+    "name": "防弹护盾背包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/ballistic_shield_backpack.svg",
+    "icon_large": ":/Stratagem/ballistic_shield_backpack.svg",
+    "code": ["S", "A", "S", "S", "W", "A"]
+  },
+  {
+    "id": "bastion_mk_xvi",
+    "name": "堡垒MK XVI",
+    "type": "supply",
+    "icon_small": ":/Stratagem/bastion_mk_xvi.svg",
+    "icon_large": ":/Stratagem/bastion_mk_xvi.svg",
+    "code": ["A", "S", "D", "S", "A", "S", "W", "S", "W"]
+  },
+  {
+    "id": "breakthrough_exosuit",
+    "name": "突破机甲",
+    "type": "supply",
+    "icon_small": ":/Stratagem/breakthrough_exosuit.svg",
+    "icon_large": ":/Stratagem/breakthrough_exosuit.svg",
+    "code": ["A", "S", "D", "A", "D", "S", "W"]
+  },
+  {
+    "id": "bullet_storm",
+    "name": "子弹风暴",
+    "type": "supply",
+    "icon_small": ":/Stratagem/bullet_storm.svg",
+    "icon_large": ":/Stratagem/bullet_storm.svg",
+    "code": ["S", "A", "S", "D", "W", "A"]
+  },
+  {
+    "id": "c4_pack",
+    "name": "C4背包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/c4_pack.svg",
+    "icon_large": ":/Stratagem/c4_pack.svg",
+    "code": ["S", "D", "W", "W", "D", "W"]
+  },
+  {
+    "id": "call_in_super_destroyer",
+    "name": "召唤超级驱逐舰",
+    "type": "utility",
+    "icon_small": ":/Stratagem/call_in_super_destroyer.svg",
+    "icon_large": ":/Stratagem/call_in_super_destroyer.svg",
+    "code": ["W", "W", "S", "S", "A", "D", "A", "D"]
+  },
+  {
+    "id": "cargo_container",
+    "name": "货柜",
+    "type": "utility",
+    "icon_small": ":/Stratagem/cargo_container.svg",
+    "icon_large": ":/Stratagem/cargo_container.svg",
+    "code": ["W", "W", "S", "S", "D", "S"]
+  },
+  {
+    "id": "commando",
+    "name": "突击兵",
+    "type": "supply",
+    "icon_small": ":/Stratagem/commando.svg",
+    "icon_large": ":/Stratagem/commando.svg",
+    "code": ["S", "A", "W", "S", "D"]
+  },
+  {
+    "id": "cqc_20",
+    "name": "CQC-20破门锤",
+    "type": "supply",
+    "icon_small": ":/Stratagem/cqc_20.svg",
+    "icon_large": ":/Stratagem/cqc_20.svg",
+    "code": ["S", "A", "D", "A", "W"]
+  },
+  {
+    "id": "cremator",
+    "name": "焚燃者",
+    "type": "supply",
+    "icon_small": ":/Stratagem/cremator.svg",
+    "icon_large": ":/Stratagem/cremator.svg",
+    "code": ["S", "S", "D", "S", "W", "W"]
+  },
+  {
+    "id": "dark_fluid_vessel",
+    "name": "暗流体容器",
+    "type": "utility",
+    "icon_small": ":/Stratagem/dark_fluid_vessel.svg",
+    "icon_large": ":/Stratagem/dark_fluid_vessel.svg",
+    "code": ["W", "A", "D", "S", "W", "W"]
+  },
+  {
+    "id": "defoliation_tool",
+    "name": "除叶工具",
+    "type": "supply",
+    "icon_small": ":/Stratagem/defoliation_tool.svg",
+    "icon_large": ":/Stratagem/defoliation_tool.svg",
+    "code": ["S", "A", "D", "D", "S"]
+  },
+  {
+    "id": "directional_shield",
+    "name": "指向护盾包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/directional_shield.svg",
+    "icon_large": ":/Stratagem/directional_shield.svg",
+    "code": ["S", "W", "A", "D", "W", "W"]
+  },
+  {
+    "id": "eagle_110mm_rocket_pods",
+    "name": "飞鹰110mm火箭巢",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_110mm_rocket_pods.svg",
+    "icon_large": ":/Stratagem/eagle_110mm_rocket_pods.svg",
+    "code": ["W", "D", "W", "A"]
+  },
+  {
+    "id": "eagle_500kg_bomb",
+    "name": "飞鹰500kg炸弹",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_500kg_bomb.svg",
+    "icon_large": ":/Stratagem/eagle_500kg_bomb.svg",
+    "code": ["W", "D", "S", "S", "S"]
+  },
+  {
+    "id": "eagle_airstrike",
+    "name": "飞鹰空袭",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_airstrike.svg",
+    "icon_large": ":/Stratagem/eagle_airstrike.svg",
+    "code": ["W", "D", "S", "D"]
+  },
+  {
+    "id": "eagle_cluster_bomb",
+    "name": "飞鹰集束炸弹",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_cluster_bomb.svg",
+    "icon_large": ":/Stratagem/eagle_cluster_bomb.svg",
+    "code": ["W", "D", "S", "S", "D"]
+  },
+  {
+    "id": "eagle_napalm_airstrike",
+    "name": "飞鹰燃烧空袭",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_napalm_airstrike.svg",
+    "icon_large": ":/Stratagem/eagle_napalm_airstrike.svg",
+    "code": ["W", "D", "S", "W"]
+  },
+  {
+    "id": "eagle_rearm",
+    "name": "飞鹰装弹",
+    "type": "utility",
+    "icon_small": ":/Stratagem/eagle_rearm.svg",
+    "icon_large": ":/Stratagem/eagle_rearm.svg",
+    "code": ["W", "W", "A", "W", "D"]
+  },
+  {
+    "id": "eagle_smoke_strike",
+    "name": "飞鹰烟雾空袭",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_smoke_strike.svg",
+    "icon_large": ":/Stratagem/eagle_smoke_strike.svg",
+    "code": ["W", "D", "W", "S"]
+  },
+  {
+    "id": "eagle_strafing_run",
+    "name": "飞鹰扫射",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/eagle_strafing_run.svg",
+    "icon_large": ":/Stratagem/eagle_strafing_run.svg",
+    "code": ["W", "D", "D"]
+  },
+  {
+    "id": "eat_411",
+    "name": "EAT-411荡平",
+    "type": "supply",
+    "icon_small": ":/Stratagem/eat_411.svg",
+    "icon_large": ":/Stratagem/eat_411.svg",
+    "code": ["S", "S", "A", "W", "S"]
+  },
+  {
+    "id": "emancipator_exosuit",
+    "name": "解放者机甲",
+    "type": "supply",
+    "icon_small": ":/Stratagem/emancipator_exosuit.svg",
+    "icon_large": ":/Stratagem/emancipator_exosuit.svg",
+    "code": ["A", "S", "D", "W", "A", "S", "W"]
+  },
+  {
+    "id": "ems_mortar_sentry",
+    "name": "电磁迫击炮哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/ems_mortar_sentry.svg",
+    "icon_large": ":/Stratagem/ems_mortar_sentry.svg",
+    "code": ["S", "W", "D", "S", "D"]
+  },
+  {
+    "id": "epoch",
+    "name": "纪元PLAS-45",
+    "type": "supply",
+    "icon_small": ":/Stratagem/epoch.svg",
+    "icon_large": ":/Stratagem/epoch.svg",
+    "code": ["S", "A", "W", "A", "D"]
+  },
+  {
+    "id": "expendable_anti_tank",
+    "name": "次抛反坦克",
+    "type": "supply",
+    "icon_small": ":/Stratagem/expendable_anti_tank.svg",
+    "icon_large": ":/Stratagem/expendable_anti_tank.svg",
+    "code": ["S", "S", "A", "W", "D"]
+  },
+  {
+    "id": "expendable_napalm",
+    "name": "EAT-700燃烧次抛",
+    "type": "supply",
+    "icon_small": ":/Stratagem/expendable_napalm.svg",
+    "icon_large": ":/Stratagem/expendable_napalm.svg",
+    "code": ["S", "S", "A", "W", "A"]
+  },
+  {
+    "id": "fast_recon_vehicle",
+    "name": "快速侦察车",
+    "type": "supply",
+    "icon_small": ":/Stratagem/fast_recon_vehicle.svg",
+    "icon_large": ":/Stratagem/fast_recon_vehicle.svg",
+    "code": ["A", "S", "D", "S", "D", "S", "W"]
+  },
+  {
+    "id": "flame_sentry",
+    "name": "火焰哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/flame_sentry.svg",
+    "icon_large": ":/Stratagem/flame_sentry.svg",
+    "code": ["S", "W", "D", "S", "W", "W"]
+  },
+  {
+    "id": "flamethrower",
+    "name": "喷火器",
+    "type": "supply",
+    "icon_small": ":/Stratagem/flamethrower.svg",
+    "icon_large": ":/Stratagem/flamethrower.svg",
+    "code": ["S", "A", "W", "S", "W"]
+  },
+  {
+    "id": "gas_mine",
+    "name": "毒气地雷",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/gas_mine.svg",
+    "icon_large": ":/Stratagem/gas_mine.svg",
+    "code": ["S", "A", "A", "D"]
+  },
+  {
+    "id": "gas_mortar_sentry",
+    "name": "毒气迫击炮哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/gas_mortar_sentry.svg",
+    "icon_large": ":/Stratagem/gas_mortar_sentry.svg",
+    "code": ["S", "W", "D", "S", "A"]
+  },
+  {
+    "id": "gatling_sentry",
+    "name": "加特林哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/gatling_sentry.svg",
+    "icon_large": ":/Stratagem/gatling_sentry.svg",
+    "code": ["S", "W", "D", "A"]
+  },
+  {
+    "id": "gl_28",
+    "name": "GL-28背包榴弹",
+    "type": "supply",
+    "icon_small": ":/Stratagem/gl_28.svg",
+    "icon_large": ":/Stratagem/gl_28.svg",
+    "code": ["S", "A", "W", "A", "W", "W"]
+  },
+  {
+    "id": "gl_52_de_escalator",
+    "name": "GL-52电榴弹",
+    "type": "supply",
+    "icon_small": ":/Stratagem/gl_52_de_escalator.svg",
+    "icon_large": ":/Stratagem/gl_52_de_escalator.svg",
+    "code": ["S", "D", "W", "A", "D"]
+  },
+  {
+    "id": "grenade_launcher",
+    "name": "榴弹发射器",
+    "type": "supply",
+    "icon_small": ":/Stratagem/grenade_launcher.svg",
+    "icon_large": ":/Stratagem/grenade_launcher.svg",
+    "code": ["S", "A", "W", "A", "S"]
+  },
+  {
+    "id": "grenadier_battlement",
+    "name": "榴弹炮台",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/grenadier_battlement.svg",
+    "icon_large": ":/Stratagem/grenadier_battlement.svg",
+    "code": ["S", "D", "S", "A", "D"]
+  },
+  {
+    "id": "guard_dog",
+    "name": "实弹狗",
+    "type": "supply",
+    "icon_small": ":/Stratagem/guard_dog.svg",
+    "icon_large": ":/Stratagem/guard_dog.svg",
+    "code": ["S", "W", "A", "W", "D", "S"]
+  },
+  {
+    "id": "guard_dog_breath",
+    "name": "毒狗",
+    "type": "supply",
+    "icon_small": ":/Stratagem/guard_dog_breath.svg",
+    "icon_large": ":/Stratagem/guard_dog_breath.svg",
+    "code": ["S", "W", "A", "W", "D", "W"]
+  },
+  {
+    "id": "guard_dog_hot_dog",
+    "name": "热狗",
+    "type": "supply",
+    "icon_small": ":/Stratagem/guard_dog_hot_dog.svg",
+    "icon_large": ":/Stratagem/guard_dog_hot_dog.svg",
+    "code": ["S", "W", "A", "W", "A", "A"]
+  },
+  {
+    "id": "guard_dog_k_9",
+    "name": "电狗K-9",
+    "type": "supply",
+    "icon_small": ":/Stratagem/guard_dog_k_9.svg",
+    "icon_large": ":/Stratagem/guard_dog_k_9.svg",
+    "code": ["S", "W", "A", "W", "D", "A"]
+  },
+  {
+    "id": "guard_dog_rover",
+    "name": "激光狗",
+    "type": "supply",
+    "icon_small": ":/Stratagem/guard_dog_rover.svg",
+    "icon_large": ":/Stratagem/guard_dog_rover.svg",
+    "code": ["S", "W", "A", "W", "D", "D"]
+  },
+  {
+    "id": "heavy_machine_gun",
+    "name": "重机枪",
+    "type": "supply",
+    "icon_small": ":/Stratagem/heavy_machine_gun.svg",
+    "icon_large": ":/Stratagem/heavy_machine_gun.svg",
+    "code": ["S", "A", "W", "S", "S"]
+  },
+  {
+    "id": "hellbomb",
+    "name": "地狱火炸弹",
+    "type": "utility",
+    "icon_small": ":/Stratagem/hellbomb.svg",
+    "icon_large": ":/Stratagem/hellbomb.svg",
+    "code": ["S", "W", "A", "S", "W", "D", "S", "W"]
+  },
+  {
+    "id": "hellbomb_portable",
+    "name": "B-100便携地狱火",
+    "type": "supply",
+    "icon_small": ":/Stratagem/hellbomb_portable.svg",
+    "icon_large": ":/Stratagem/hellbomb_portable.svg",
+    "code": ["S", "D", "W", "W", "W"]
+  },
+  {
+    "id": "hive_breaker_drill",
+    "name": "破巢钻机",
+    "type": "utility",
+    "icon_small": ":/Stratagem/hive_breaker_drill.svg",
+    "icon_large": ":/Stratagem/hive_breaker_drill.svg",
+    "code": ["A", "W", "S", "D", "S", "S"]
+  },
+  {
+    "id": "hmg_emplacement",
+    "name": "重机枪炮台",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/hmg_emplacement.svg",
+    "icon_large": ":/Stratagem/hmg_emplacement.svg",
+    "code": ["S", "W", "A", "D", "D", "A"]
+  },
+  {
+    "id": "hover_pack",
+    "name": "LIFT-860飞包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/hover_pack.svg",
+    "icon_large": ":/Stratagem/hover_pack.svg",
+    "code": ["S", "W", "W", "S", "A", "D"]
+  },
+  {
+    "id": "incendiary_mines",
+    "name": "燃烧地雷",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/incendiary_mines.svg",
+    "icon_large": ":/Stratagem/incendiary_mines.svg",
+    "code": ["S", "A", "A", "S"]
+  },
+  {
+    "id": "incinerator_frv",
+    "name": "焚化者战车",
+    "type": "supply",
+    "icon_small": ":/Stratagem/incinerator_frv.svg",
+    "icon_large": ":/Stratagem/incinerator_frv.svg",
+    "code": ["A", "S", "D", "A", "S", "W", "W"]
+  },
+  {
+    "id": "jump_pack",
+    "name": "跳包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/jump_pack.svg",
+    "icon_large": ":/Stratagem/jump_pack.svg",
+    "code": ["S", "W", "W", "S", "W"]
+  },
+  {
+    "id": "laser_cannon",
+    "name": "激光大炮",
+    "type": "supply",
+    "icon_small": ":/Stratagem/laser_cannon.svg",
+    "icon_large": ":/Stratagem/laser_cannon.svg",
+    "code": ["S", "A", "S", "W", "A"]
+  },
+  {
+    "id": "laser_sentry",
+    "name": "AVLAS-98激光哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/laser_sentry.svg",
+    "icon_large": ":/Stratagem/laser_sentry.svg",
+    "code": ["S", "W", "D", "S", "W", "D"]
+  },
+  {
+    "id": "lumberer_exosuit",
+    "name": "伐木机甲",
+    "type": "supply",
+    "icon_small": ":/Stratagem/lumberer_exosuit.svg",
+    "icon_large": ":/Stratagem/lumberer_exosuit.svg",
+    "code": ["A", "S", "D", "W", "D", "A", "W"]
+  },
+  {
+    "id": "machine_gun",
+    "name": "中机枪",
+    "type": "supply",
+    "icon_small": ":/Stratagem/machine_gun.svg",
+    "icon_large": ":/Stratagem/machine_gun.svg",
+    "code": ["S", "A", "S", "W", "D"]
+  },
+  {
+    "id": "machine_gun_sentry",
+    "name": "机枪哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/machine_gun_sentry.svg",
+    "icon_large": ":/Stratagem/machine_gun_sentry.svg",
+    "code": ["S", "W", "D", "D", "W"]
+  },
+  {
+    "id": "maxigun",
+    "name": "M-1000重装机枪",
+    "type": "supply",
+    "icon_small": ":/Stratagem/maxigun.svg",
+    "icon_large": ":/Stratagem/maxigun.svg",
+    "code": ["S", "A", "D", "S", "W", "W"]
+  },
+  {
+    "id": "mortar_sentry",
+    "name": "迫击炮哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/mortar_sentry.svg",
+    "icon_large": ":/Stratagem/mortar_sentry.svg",
+    "code": ["S", "W", "D", "D", "S"]
+  },
+  {
+    "id": "one_true_flag",
+    "name": "CQC-1唯一真旗",
+    "type": "supply",
+    "icon_small": ":/Stratagem/one_true_flag.svg",
+    "icon_large": ":/Stratagem/one_true_flag.svg",
+    "code": ["S", "A", "D", "D", "W"]
+  },
+  {
+    "id": "orbital_120mm_he_barrage",
+    "name": "轨道120mm高爆弹幕",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_120mm_he_barrage.svg",
+    "icon_large": ":/Stratagem/orbital_120mm_he_barrage.svg",
+    "code": ["D", "D", "S", "A", "D", "S"]
+  },
+  {
+    "id": "orbital_380mm_he_barrage",
+    "name": "轨道380mm高爆弹幕",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_380mm_he_barrage.svg",
+    "icon_large": ":/Stratagem/orbital_380mm_he_barrage.svg",
+    "code": ["D", "S", "W", "W", "A", "S", "S"]
+  },
+  {
+    "id": "orbital_airburst_strike",
+    "name": "轨道空爆",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_airburst_strike.svg",
+    "icon_large": ":/Stratagem/orbital_airburst_strike.svg",
+    "code": ["D", "D", "D"]
+  },
+  {
+    "id": "orbital_ems_strike",
+    "name": "轨道电磁打击",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_ems_strike.svg",
+    "icon_large": ":/Stratagem/orbital_ems_strike.svg",
+    "code": ["D", "D", "A", "S"]
+  },
+  {
+    "id": "orbital_gas_strike",
+    "name": "轨道毒气打击",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_gas_strike.svg",
+    "icon_large": ":/Stratagem/orbital_gas_strike.svg",
+    "code": ["D", "D", "S", "D"]
+  },
+  {
+    "id": "orbital_gatling_barrage",
+    "name": "轨道加特林弹幕",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_gatling_barrage.svg",
+    "icon_large": ":/Stratagem/orbital_gatling_barrage.svg",
+    "code": ["D", "S", "A", "W", "W"]
+  },
+  {
+    "id": "orbital_laser",
+    "name": "轨道激光",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_laser.svg",
+    "icon_large": ":/Stratagem/orbital_laser.svg",
+    "code": ["D", "S", "W", "D", "S"]
+  },
+  {
+    "id": "orbital_napalm_barrage",
+    "name": "轨道燃烧弹幕",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_napalm_barrage.svg",
+    "icon_large": ":/Stratagem/orbital_napalm_barrage.svg",
+    "code": ["D", "D", "S", "A", "D", "W"]
+  },
+  {
+    "id": "orbital_precision_strike",
+    "name": "轨道精准打击",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_precision_strike.svg",
+    "icon_large": ":/Stratagem/orbital_precision_strike.svg",
+    "code": ["D", "D", "W"]
+  },
+  {
+    "id": "orbital_railcannon_strike",
+    "name": "轨道磁轨炮",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_railcannon_strike.svg",
+    "icon_large": ":/Stratagem/orbital_railcannon_strike.svg",
+    "code": ["D", "W", "S", "S", "D"]
+  },
+  {
+    "id": "orbital_smoke_strike",
+    "name": "轨道烟雾",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_smoke_strike.svg",
+    "icon_large": ":/Stratagem/orbital_smoke_strike.svg",
+    "code": ["D", "D", "S", "W"]
+  },
+  {
+    "id": "orbital_walking_barrage",
+    "name": "轨道行走弹幕",
+    "type": "offensive",
+    "icon_small": ":/Stratagem/orbital_walking_barrage.svg",
+    "icon_large": ":/Stratagem/orbital_walking_barrage.svg",
+    "code": ["D", "S", "D", "S", "D", "S"]
+  },
+  {
+    "id": "patriot_exosuit",
+    "name": "爱国者机甲",
+    "type": "supply",
+    "icon_small": ":/Stratagem/patriot_exosuit.svg",
+    "icon_large": ":/Stratagem/patriot_exosuit.svg",
+    "code": ["A", "S", "D", "W", "A", "S", "S"]
+  },
+  {
+    "id": "prospecting_drill",
+    "name": "勘探钻机",
+    "type": "utility",
+    "icon_small": ":/Stratagem/prospecting_drill.svg",
+    "icon_large": ":/Stratagem/prospecting_drill.svg",
+    "code": ["S", "S", "A", "D", "S", "S"]
+  },
+  {
+    "id": "quasar_cannon",
+    "name": "类星体加农炮",
+    "type": "supply",
+    "icon_small": ":/Stratagem/quasar_cannon.svg",
+    "icon_large": ":/Stratagem/quasar_cannon.svg",
+    "code": ["S", "S", "W", "A", "D"]
+  },
+  {
+    "id": "railgun",
+    "name": "磁轨炮",
+    "type": "supply",
+    "icon_small": ":/Stratagem/railgun.svg",
+    "icon_large": ":/Stratagem/railgun.svg",
+    "code": ["S", "D", "S", "W", "A", "D"]
+  },
+  {
+    "id": "recoilless_rifle",
+    "name": "无后座力炮",
+    "type": "supply",
+    "icon_small": ":/Stratagem/recoilless_rifle.svg",
+    "icon_large": ":/Stratagem/recoilless_rifle.svg",
+    "code": ["S", "A", "D", "D", "A"]
+  },
+  {
+    "id": "reinforce",
+    "name": "增援",
+    "type": "utility",
+    "icon_small": ":/Stratagem/reinforce.svg",
+    "icon_large": ":/Stratagem/reinforce.svg",
+    "code": ["W", "S", "D", "A", "W"]
+  },
+  {
+    "id": "resupply",
+    "name": "补给",
+    "type": "utility",
+    "icon_small": ":/Stratagem/resupply.svg",
+    "icon_large": ":/Stratagem/resupply.svg",
+    "code": ["S", "S", "W", "D"]
+  },
+  {
+    "id": "rocket_sentry",
+    "name": "火箭哨戒",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/rocket_sentry.svg",
+    "icon_large": ":/Stratagem/rocket_sentry.svg",
+    "code": ["S", "W", "D", "D", "A"]
+  },
+  {
+    "id": "seaf_artillery",
+    "name": "SEAF炮击",
+    "type": "utility",
+    "icon_small": ":/Stratagem/seaf_artillery.svg",
+    "icon_large": ":/Stratagem/seaf_artillery.svg",
+    "code": ["D", "W", "W", "S"]
+  },
+  {
+    "id": "seismic_probe",
+    "name": "地震探测器",
+    "type": "utility",
+    "icon_small": ":/Stratagem/seismic_probe.svg",
+    "icon_large": ":/Stratagem/seismic_probe.svg",
+    "code": ["W", "W", "A", "D", "S", "S"]
+  },
+  {
+    "id": "shield_generator_pack",
+    "name": "蛋盾包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/shield_generator_pack.svg",
+    "icon_large": ":/Stratagem/shield_generator_pack.svg",
+    "code": ["S", "W", "A", "D", "A", "D"]
+  },
+  {
+    "id": "shield_generator_relay",
+    "name": "护盾发生器",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/shield_generator_relay.svg",
+    "icon_large": ":/Stratagem/shield_generator_relay.svg",
+    "code": ["S", "S", "A", "D", "A", "D"]
+  },
+  {
+    "id": "solo_silo",
+    "name": "MS-11单兵导弹",
+    "type": "supply",
+    "icon_small": ":/Stratagem/solo_silo.svg",
+    "icon_large": ":/Stratagem/solo_silo.svg",
+    "code": ["S", "W", "D", "S", "S"]
+  },
+  {
+    "id": "sos_beacon",
+    "name": "SOS信标",
+    "type": "utility",
+    "icon_small": ":/Stratagem/sos_beacon.svg",
+    "icon_large": ":/Stratagem/sos_beacon.svg",
+    "code": ["W", "S", "D", "W"]
+  },
+  {
+    "id": "spear",
+    "name": "飞矛",
+    "type": "supply",
+    "icon_small": ":/Stratagem/spear.svg",
+    "icon_large": ":/Stratagem/spear.svg",
+    "code": ["S", "S", "W", "S", "S"]
+  },
+  {
+    "id": "speargun",
+    "name": "S-11矛枪",
+    "type": "supply",
+    "icon_small": ":/Stratagem/speargun.svg",
+    "icon_large": ":/Stratagem/speargun.svg",
+    "code": ["S", "D", "S", "A", "W", "D"]
+  },
+  {
+    "id": "sta_x3_wasp_launcher",
+    "name": "STA-X3黄蜂",
+    "type": "supply",
+    "icon_small": ":/Stratagem/sta_x3_wasp_launcher.svg",
+    "icon_large": ":/Stratagem/sta_x3_wasp_launcher.svg",
+    "code": ["S", "S", "W", "S", "D"]
+  },
+  {
+    "id": "stalwart",
+    "name": "盟友",
+    "type": "supply",
+    "icon_small": ":/Stratagem/stalwart.svg",
+    "icon_large": ":/Stratagem/stalwart.svg",
+    "code": ["S", "A", "S", "W", "W", "A"]
+  },
+  {
+    "id": "sterilizer",
+    "name": "TX-41灭菌器",
+    "type": "supply",
+    "icon_small": ":/Stratagem/sterilizer.svg",
+    "icon_large": ":/Stratagem/sterilizer.svg",
+    "code": ["S", "A", "W", "S", "A"]
+  },
+  {
+    "id": "super_earth_flag",
+    "name": "超级地球旗",
+    "type": "utility",
+    "icon_small": ":/Stratagem/super_earth_flag.svg",
+    "icon_large": ":/Stratagem/super_earth_flag.svg",
+    "code": ["S", "W", "S", "W"]
+  },
+  {
+    "id": "supply_frv",
+    "name": "补给战车",
+    "type": "supply",
+    "icon_small": ":/Stratagem/supply_frv.svg",
+    "icon_large": ":/Stratagem/supply_frv.svg",
+    "code": ["A", "S", "A", "A", "S", "W", "D"]
+  },
+  {
+    "id": "supply_pack",
+    "name": "补给背包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/supply_pack.svg",
+    "icon_large": ":/Stratagem/supply_pack.svg",
+    "code": ["S", "A", "S", "W", "W", "S"]
+  },
+  {
+    "id": "tectonic_drill",
+    "name": "构造钻机",
+    "type": "utility",
+    "icon_small": ":/Stratagem/tectonic_drill.svg",
+    "icon_large": ":/Stratagem/tectonic_drill.svg",
+    "code": ["W", "S", "W", "S", "W", "S"]
+  },
+  {
+    "id": "tesla_tower",
+    "name": "特斯拉塔",
+    "type": "defensive",
+    "icon_small": ":/Stratagem/tesla_tower.svg",
+    "icon_large": ":/Stratagem/tesla_tower.svg",
+    "code": ["S", "W", "D", "W", "A", "D"]
+  },
+  {
+    "id": "upload_data",
+    "name": "上传数据",
+    "type": "utility",
+    "icon_small": ":/Stratagem/upload_data.svg",
+    "icon_large": ":/Stratagem/upload_data.svg",
+    "code": ["A", "D", "W", "W", "W"]
+  },
+  {
+    "id": "warp_pack",
+    "name": "LIFT-182传送背包",
+    "type": "supply",
+    "icon_small": ":/Stratagem/warp_pack.svg",
+    "icon_large": ":/Stratagem/warp_pack.svg",
+    "code": ["S", "A", "D", "S", "A", "D"]
+  }
+]
